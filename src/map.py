@@ -9,44 +9,21 @@
 import sys
 import string
 import numpy
-
-#number of rows in A
-m = int(sys.argv[1]) 
-
-#number of columns in B
-p = int(sys.argv[2])
-
+import os
 
 # input comes from STDIN (stream data that goes to the program)
 for line in sys.stdin:
-    
-	#Remove leading and trailing whitespace
-	line = line.strip()
-
-	#Split line into array of entry data
-	entry = line.split(",")
-    
-	# Set row, column, and value for this entry
-	row = int(entry[1])
-	col = int(entry[2])
-	value = float(entry[3])
-
-	#If this is an entry in matrix A...
-	if (entry[0] == "A"):
-		for i in range(0, p):
-			print(str(row) + ' ' + str(i) + '\t' + 'A ' + str(col) + ' ' + str(value))
-		#Generate the necessary key-value pairs
- 		#(your code goes here)
-
-
-	
-	#Otherwise, if this is an entry in matrix B...
-	else:
-		for i in range(0, m):
-			print(str(i) + ' ' + str(col) + '\t' + 'B ' + str(row) + ' ' + str(value))
-		#Generate the necessary key-value pairs
- 		#(your code goes here)
-		
-
-	
+    if ((os.environ.get(mapreduce_map_input_file)).contains("parking")):
+    	arr = line.strip().split(',')
+    	summ = arr[0]
+    	pid = arr[1]
+    	issueDate = arr[4]
+    	vCode = arr[5]
+    	precinct = arr[14]
+    	print(summ + "\t" + "P, " + pid + ", " + issueDate + ", " + vCode + ", " + precinct)
+    else:
+    	arr = line.strip().split(',')
+    	summ = arr[3]
+    	print (summ + "\t" + "O")
+    	
         
