@@ -30,10 +30,14 @@ for line in sys.stdin:
 			weekDayTotal = weekDayTotal + 1
 	else:
 		if currentkey:
-			print currentkey + '\t' + ("%.2f" % getAvg(weekendTotal, NUM_WEEKENDDAYS)) + ', ' + ("%.2f" % getAvg(weekDayTotal, NUM_WEEKDAYS)) 
-		weekendTotal = 1
-		weekDayTotal = 1
+			print (currentkey + '\t' + ("%.2f" % getAvg(weekendTotal, NUM_WEEKENDDAYS)) + ', ' + ("%.2f" % getAvg(weekDayTotal, NUM_WEEKDAYS))) 
+		if(day in WEEKEND_DAYS):
+			weekendTotal = 1
+			weekDayTotal = 0
+		else:
+			weekDayTotal = 1
+			weekendTotal = 0
 		currentkey = key
 
 if(key == currentkey):
-	print currentkey + '\t' + ("%.2f" % getAvg(weekendTotal, NUM_WEEKENDDAYS)) + ', ' + ("%.2f" % getAvg(weekDayTotal, NUM_WEEKDAYS))
+	print (currentkey + '\t' + ("%.2f" % getAvg(weekendTotal, NUM_WEEKENDDAYS)) + ', ' + ("%.2f" % getAvg(weekDayTotal, NUM_WEEKDAYS)))

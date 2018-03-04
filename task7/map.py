@@ -7,4 +7,4 @@ for line in sys.stdin:
     lineArr = line.strip().split(',')
     date = lineArr[1]
     vCode = lineArr[2]
-    print vCode + '\t' + date
+    print (vCode + '\t' + date)

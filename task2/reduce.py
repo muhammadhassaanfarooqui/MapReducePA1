@@ -14,8 +14,8 @@ for line in sys.stdin:
 		total = total + 1
 	else:
 		if currentkey:
-			print currentkey + '\t' + str(total)
+			print (currentkey + '\t' + str(total))
 		total = 1
 		currentkey = key
 if(key == currentkey):
-	print currentkey + '\t' + str(total)
+	print (currentkey + '\t' + str(total))

@@ -1,8 +1,4 @@
 #!/usr/bin/env python
-#Reduce function for computing matrix multiply A*B
-
-#Input arguments:
-#variable n should be set to the inner dimension of the matrix product (i.e., the number of columns of A/rows of B)
 
 import sys
 import string
@@ -26,4 +22,4 @@ for line in sys.stdin:
 if(key == currentkey):
 	ls.sort(key=lambda tup: tup[1])
 	culprit = ls[-1:][0]
-	print culprit[0] + '\t' + str(culprit[1])
+	print (culprit[0] + '\t' + str(culprit[1]))

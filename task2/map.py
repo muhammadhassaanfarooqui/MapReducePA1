@@ -16,5 +16,5 @@ import os
 for line in sys.stdin:
     lineArr = line.strip().split(',')
     vCode = lineArr[2];
-    print vCode + '\t' + '1'
+    print (vCode + '\t' + '1')
         

@@ -1,0 +1,4 @@
+Some of rows had empty entries
+Some of the rows had invalid entries for example number plates that were consisting of only one character or some plates made no sense like BLAQMAX.
+Some of the rows were empty and some had other values indicating null values like -1s and 'N/A's.
+Some of the entries had commas embedded inside them with double quotes on the sides. So the values were difficult to split. 

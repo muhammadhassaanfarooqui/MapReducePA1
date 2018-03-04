@@ -8,22 +8,25 @@
  
 import sys
 import string
-import numpy
 import os
+
+#(os.environ['mapreduce_map_input_file'].contains("parking"))
 
 # input comes from STDIN (stream data that goes to the program)
 for line in sys.stdin:
-    if ((os.environ.get(mapreduce_map_input_file)).contains("parking")):
-    	arr = line.strip().split(',')
-    	summ = arr[0]
-    	pid = arr[1]
-    	issueDate = arr[4]
-    	vCode = arr[5]
-    	precinct = arr[14]
-    	print(summ + "\t" + "P, " + pid + ", " + issueDate + ", " + vCode + ", " + precinct)
+    print line
+    if (line[0] == 'P'):
+        line = line[1:]
+        # print line
+        arr = line.strip().split(',')
+        summ = arr[0]
+        pid = arr[1]
+        issueDate = arr[4]
+        vCode = arr[5]
+        precinct = arr[14]
+        print(summ + "\t" + "P, " + pid + ", " + issueDate + ", " + vCode + ", " + precinct)
     else:
-    	arr = line.strip().split(',')
-    	summ = arr[3]
-    	print (summ + "\t" + "O")
-    	
+        arr = line.strip().split(',')
+        summ = arr[3]
+        print (summ + "\t" + "O")
         
